@@ -9,287 +9,93 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Better Vetter Newsletter - Fast, actionable resources for technical recruiters who want to stop firefighting." />
 		<title>Better Vetter Newsletter</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			:root {
-				--dark-gray: #2d2d2d;
-				--medium-gray: #4a4a4a;
-				--light-gray: #e5e5e5;
-				--light-pink: #f5c2d1;
-				--pink-accent: #e8a4b8;
-				--text-light: #f5f5f5;
-				--text-dark: #1a1a1a;
-			}
-
-			body {
-				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-				background: var(--dark-gray);
-				color: var(--text-light);
-				line-height: 1.6;
-			}
-
-			.container {
-				max-width: 900px;
-				margin: 0 auto;
-				padding: 4rem 2rem;
-			}
-
-			.hero {
-				text-align: center;
-				margin-bottom: 5rem;
-			}
-
-			.hero h1 {
-				font-size: clamp(2.5rem, 5vw, 4rem);
-				font-weight: 700;
-				margin-bottom: 1rem;
-				color: var(--text-light);
-				letter-spacing: -0.02em;
-			}
-
-			.hero .tagline {
-				font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-				color: var(--light-pink);
-				font-weight: 300;
-				margin-bottom: 1rem;
-			}
-
-			.hero .launch-badge {
-				display: inline-block;
-				background: var(--medium-gray);
-				color: var(--light-pink);
-				padding: 0.5rem 1.25rem;
-				border-radius: 20px;
-				font-size: 0.9rem;
-				font-weight: 500;
-				margin-bottom: 3rem;
-				border: 1px solid var(--light-pink);
-			}
-
-			.launch-cta {
-				text-align: center;
-				background: var(--medium-gray);
-				padding: 2rem;
-				border-radius: 8px;
-				margin: 3rem 0 2rem 0;
-				border: 2px solid var(--light-pink);
-			}
-
-			.launch-cta p {
-				font-size: clamp(1.1rem, 2vw, 1.4rem);
-				color: var(--light-pink);
-				font-weight: 600;
-				margin: 0;
-			}
-
-			.main-headline {
-				font-size: clamp(2rem, 4vw, 3rem);
-				font-weight: 700;
-				margin-bottom: 1.5rem;
-				color: var(--text-light);
-			}
-
-			.subheadline {
-				font-size: clamp(1.1rem, 2vw, 1.4rem);
-				color: var(--light-pink);
-				margin-bottom: 3rem;
-				font-weight: 400;
-			}
-
-			.section {
-				margin-bottom: 4rem;
-			}
-
-			.section-title {
-				font-size: clamp(1.5rem, 3vw, 2rem);
-				font-weight: 600;
-				margin-bottom: 1.5rem;
-				color: var(--light-pink);
-			}
-
-			.content-list {
-				list-style: none;
-				margin-bottom: 2rem;
-			}
-
-			.content-list li {
-				margin-bottom: 1.5rem;
-				padding-left: 1.5rem;
-				position: relative;
-			}
-
-			.content-list li::before {
-				content: "→";
-				position: absolute;
-				left: 0;
-				color: var(--light-pink);
-				font-weight: bold;
-			}
-
-			.content-list strong {
-				color: var(--light-pink);
-				display: block;
-				margin-bottom: 0.5rem;
-				font-size: 1.1rem;
-			}
-
-			.promise-box {
-				background: var(--medium-gray);
-				border-left: 4px solid var(--light-pink);
-				padding: 2rem;
-				margin: 3rem 0;
-				border-radius: 4px;
-			}
-
-			.promise-box p {
-				margin-bottom: 1rem;
-			}
-
-			.promise-box p:last-child {
-				margin-bottom: 0;
-				font-weight: 600;
-				color: var(--light-pink);
-			}
-
-			.form-container {
-				background: var(--medium-gray);
-				padding: 3rem 2rem;
-				border-radius: 8px;
-				margin: 4rem 0;
-				text-align: center;
-			}
-
-			.authority-section {
-				background: var(--medium-gray);
-				padding: 3rem 2rem;
-				border-radius: 8px;
-				margin: 4rem 0;
-			}
-
-			.authority-section h2 {
-				font-size: clamp(1.75rem, 3vw, 2.25rem);
-				margin-bottom: 2rem;
-				color: var(--light-pink);
-				text-align: center;
-			}
-
-			.authors {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-				gap: 2rem;
-				margin-top: 2rem;
-			}
-
-			.author {
-				background: var(--dark-gray);
-				padding: 2rem;
-				border-radius: 8px;
-				border-top: 3px solid var(--light-pink);
-			}
-
-			.author h3 {
-				color: var(--light-pink);
-				margin-bottom: 0.5rem;
-				font-size: 1.25rem;
-			}
-
-			.author .role {
-				color: var(--light-gray);
-				font-size: 0.9rem;
-				margin-bottom: 1.5rem;
-				font-style: italic;
-			}
-
-			.author p {
-				font-size: 0.95rem;
-				line-height: 1.6;
-			}
-
-			@media (max-width: 768px) {
-				.container {
-					padding: 2rem 1rem;
-				}
-
-				.form-container,
-				.authority-section {
-					padding: 2rem 1.5rem;
-				}
-
-				.authors {
-					grid-template-columns: 1fr;
-				}
-			}
-		</style>
 	</head>
-	<body>
-		<div class="container">
-			<div class="hero">
-				<h1>Better Vetter Newsletter</h1>
-				<p class="tagline">Fast, actionable resources for technical recruiters</p>
-				<span class="launch-badge">Rolling out January 2026, stay tuned!</span>
+	<body class="font-sans bg-dark-gray text-text-light leading-relaxed">
+		<div class="max-w-4xl mx-auto px-8 py-16 md:px-4">
+			<div class="text-center mb-20">
+				<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-text-light tracking-tight">
+					Better Vetter Newsletter
+				</h1>
+				<p class="text-xl md:text-2xl lg:text-3xl text-light-pink font-light mb-4">
+					Fast, actionable resources for technical recruiters
+				</p>
+				<span class="inline-block bg-medium-gray text-light-pink px-5 py-2 rounded-full text-sm font-medium mb-12 border border-light-pink">
+					Rolling out January 2026, stay tuned!
+				</span>
 			</div>
 
-			<div class="section">
-				<h2 class="main-headline">Technical Recruiting Is Broken</h2>
-				<p class="subheadline">Hiring managers misstate needs. Recruiters pay for it.</p>
+			<div class="mb-16">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-text-light">
+					Technical Recruiting Is Broken
+				</h2>
+				<p class="text-lg md:text-xl lg:text-2xl text-light-pink mb-12 font-normal">
+					Hiring managers misstate needs. Recruiters pay for it.
+				</p>
 			</div>
 
-			<div class="section">
-				<h3 class="section-title">Who this is for</h3>
+			<div class="mb-16">
+				<h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-light-pink">
+					Who this is for
+				</h3>
 				<p>Recruiters, delivery managers, and sales leaders who own technical hiring outcomes and want to stop firefighting.</p>
 			</div>
 
-			<div class="section">
-				<h3 class="section-title">What you'll get (fast, actionable)</h3>
-				<ul class="content-list">
-					<li>
-						<strong>Client playbook:</strong> scripts, questions, and escalation paths to align decision-makers and steer conversations back to reality.
+			<div class="mb-16">
+				<h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-light-pink">
+					What you'll get (fast, actionable)
+				</h3>
+				<ul class="list-none mb-8">
+					<li class="mb-6 pl-6 relative">
+						<span class="absolute left-0 text-light-pink font-bold">→</span>
+						<strong class="text-light-pink block mb-2 text-lg">Client playbook:</strong> scripts, questions, and escalation paths to align decision-makers and steer conversations back to reality.
 					</li>
-					<li>
-						<strong>Role cheat sheets:</strong> the actual criteria, keyword-pairing, and red flags for Engineering, AI, and more.
+					<li class="mb-6 pl-6 relative">
+						<span class="absolute left-0 text-light-pink font-bold">→</span>
+						<strong class="text-light-pink block mb-2 text-lg">Role cheat sheets:</strong> the actual criteria, keyword-pairing, and red flags for Engineering, AI, and more.
 					</li>
-					<li>
-						<strong>Vetting templates:</strong> interview questions and skills tests that separate junior, mid, and senior (even when resumes or tenure lie).
+					<li class="mb-6 pl-6 relative">
+						<span class="absolute left-0 text-light-pink font-bold">→</span>
+						<strong class="text-light-pink block mb-2 text-lg">Vetting templates:</strong> interview questions and skills tests that separate junior, mid, and senior (even when resumes or tenure lie).
 					</li>
-					<li>
-						<strong>Market signal briefings:</strong> Current stateside hiring trends and tools that matter so you are in a position to advise and vet.
+					<li class="mb-6 pl-6 relative">
+						<span class="absolute left-0 text-light-pink font-bold">→</span>
+						<strong class="text-light-pink block mb-2 text-lg">Market signal briefings:</strong> Current stateside hiring trends and tools that matter so you are in a position to advise and vet.
 					</li>
 				</ul>
 			</div>
 
-			<div class="promise-box">
-				<p>We made this newsletter for leaders who are sick of guessing.</p>
-				<p>One short promise: read it, use one thing, save hours.</p>
+			<div class="bg-medium-gray border-l-4 border-light-pink p-8 my-12 rounded">
+				<p class="mb-4">We made this newsletter for leaders who are sick of guessing.</p>
+				<p class="mb-0 font-semibold text-light-pink">One short promise: read it, use one thing, save hours.</p>
 			</div>
 
-			<div class="launch-cta">
-				<p>Rolling out January 2026, stay tuned!</p>
+			<div class="text-center bg-medium-gray p-8 rounded-lg my-12 mb-8 border-2 border-light-pink">
+				<p class="text-lg md:text-xl lg:text-2xl text-light-pink font-semibold m-0">
+					Rolling out January 2026, stay tuned!
+				</p>
 			</div>
 
-			<div class="form-container">
+			<div class="bg-medium-gray p-12 md:p-8 rounded-lg my-16 text-center">
 				<script async data-uid="4fe9d537fa" src="https://bettervetterletter.kit.com/4fe9d537fa/index.js"></script>
 			</div>
 
-			<div class="authority-section">
-				<h2>Who We Are</h2>
-				<p style="text-align: center; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+			<div class="bg-medium-gray p-12 md:p-8 rounded-lg my-16">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl mb-8 text-light-pink text-center">
+					Who We Are
+				</h2>
+				<p class="text-center mb-8 max-w-3xl mx-auto">
 					Together we help technical recruiters vet their clients and candidates better to excel at their job.
 				</p>
-				<div class="authors">
-					<div class="author">
-						<h3>Jaclyn L - Charlotte, NC</h3>
-						<p class="role">IT Portfolio & Delivery Manager</p>
-						<p>Jaclyn helps sales teams guide clients and delivery teams evaluate technical talent smarter faster and with confidence. She shows professionals how to navigate the IT hiring game with clarity and strategy.</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+					<div class="bg-dark-gray p-8 rounded-lg border-t-4 border-light-pink">
+						<h3 class="text-light-pink mb-2 text-xl">Jaclyn L - Charlotte, NC</h3>
+						<p class="text-light-gray text-sm mb-6 italic">IT Portfolio & Delivery Manager</p>
+						<p class="text-sm leading-relaxed">Jaclyn helps sales teams guide clients and delivery teams evaluate technical talent smarter faster and with confidence. She shows professionals how to navigate the IT hiring game with clarity and strategy.</p>
 					</div>
-					<div class="author">
-						<h3>Steven B - Sturgeon Bay, WI</h3>
-						<p class="role">Principal QA Automation Engineer</p>
-						<p>Steven turns deep QA expertise into actionable insight. He helps recruiters see past resumes to assess real technical skill and fit so every hire hits the mark.</p>
+					<div class="bg-dark-gray p-8 rounded-lg border-t-4 border-light-pink">
+						<h3 class="text-light-pink mb-2 text-xl">Steven B - Sturgeon Bay, WI</h3>
+						<p class="text-light-gray text-sm mb-6 italic">Principal QA Automation Engineer</p>
+						<p class="text-sm leading-relaxed">Steven turns deep QA expertise into actionable insight. He helps recruiters see past resumes to assess real technical skill and fit so every hire hits the mark.</p>
 					</div>
 				</div>
 			</div>

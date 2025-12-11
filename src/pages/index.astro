@@ -7,8 +7,8 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="The Better Vetter Letter - Fast, actionable resources for technical recruiters who want to stop firefighting." />
-		<title>The Better Vetter Letter</title>
+		<meta name="description" content="Better Vetter Newsletter - Fast, actionable resources for technical recruiters who want to stop firefighting." />
+		<title>Better Vetter Newsletter</title>
 		<style>
 			* {
 				margin: 0;
@@ -56,7 +56,35 @@
 				font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 				color: var(--light-pink);
 				font-weight: 300;
+				margin-bottom: 1rem;
+			}
+
+			.hero .launch-badge {
+				display: inline-block;
+				background: var(--medium-gray);
+				color: var(--light-pink);
+				padding: 0.5rem 1.25rem;
+				border-radius: 20px;
+				font-size: 0.9rem;
+				font-weight: 500;
 				margin-bottom: 3rem;
+				border: 1px solid var(--light-pink);
+			}
+
+			.launch-cta {
+				text-align: center;
+				background: var(--medium-gray);
+				padding: 2rem;
+				border-radius: 8px;
+				margin: 3rem 0 2rem 0;
+				border: 2px solid var(--light-pink);
+			}
+
+			.launch-cta p {
+				font-size: clamp(1.1rem, 2vw, 1.4rem);
+				color: var(--light-pink);
+				font-weight: 600;
+				margin: 0;
 			}
 
 			.main-headline {
@@ -201,8 +229,9 @@
 	<body>
 		<div class="container">
 			<div class="hero">
-				<h1>The Better Vetter Letter</h1>
+				<h1>Better Vetter Newsletter</h1>
 				<p class="tagline">Fast, actionable resources for technical recruiters</p>
+				<span class="launch-badge">Rolling out January 2026, stay tuned!</span>
 			</div>
 
 			<div class="section">
@@ -236,6 +265,10 @@
 			<div class="promise-box">
 				<p>We made this newsletter for leaders who are sick of guessing.</p>
 				<p>One short promise: read it, use one thing, save hours.</p>
+			</div>
+
+			<div class="launch-cta">
+				<p>Rolling out January 2026, stay tuned!</p>
 			</div>
 
 			<div class="form-container">

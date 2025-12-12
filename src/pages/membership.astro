@@ -1,0 +1,79 @@
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Upgrade to Better Vetter Newsletter paid membership - Get exclusive access to our private community and technical deep-dive emails." />
+		<title>Membership - Better Vetter Newsletter</title>
+		<script src="https://bettervetterletter.kit.com/commerce.js" async defer></script>
+		<style>
+			@keyframes shimmer {
+				0% {
+					background-position: -200% center;
+				}
+				100% {
+					background-position: 200% center;
+				}
+			}
+			
+			.convertkit-button {
+				display: inline-block;
+				background: linear-gradient(90deg, #f5c2d1 0%, #e8a4b8 50%, #f5c2d1 100%);
+				background-size: 200% auto;
+				color: #2d2d2d;
+				padding: 1rem 3rem;
+				border-radius: 0.5rem;
+				font-size: 1.25rem;
+				font-weight: 700;
+				text-decoration: none;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(245, 194, 209, 0.4);
+				animation: shimmer 3s linear infinite;
+			}
+			
+			.convertkit-button:hover {
+				transform: scale(1.05);
+				box-shadow: 0 6px 20px rgba(245, 194, 209, 0.6);
+			}
+		</style>
+	</head>
+	<body class="font-sans bg-dark-gray text-text-light leading-relaxed">
+		<div class="max-w-4xl mx-auto px-8 py-16 md:px-4">
+			<div class="text-center mb-12">
+				<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-text-light tracking-tight">
+					Better Vetter Newsletter
+				</h1>
+				<hr class="border-light-pink border-t-2 w-24 mx-auto mb-12" />
+			</div>
+
+			<div class="mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold mb-8 text-text-light text-center">
+					Get more from Better Vetter
+				</h2>
+			</div>
+
+			<div class="mb-16">
+				<ul class="list-none mb-8">
+					<li class="mb-6 pl-6 relative">
+						<span class="absolute left-0 text-light-pink font-bold">→</span>
+						<strong class="text-light-pink block mb-2 text-lg">Private Better Vetter Community</strong>
+						Connect with other technical recruiters and get direct access to Jaclyn and Steven.
+					</li>
+					<li class="mb-6 pl-6 relative">
+						<span class="absolute left-0 text-light-pink font-bold">→</span>
+						<strong class="text-light-pink block mb-2 text-lg">Friday Technical Deep-Dive Email</strong>
+						Steven's technical-knowledge-heavy email that builds on Monday's content. Each week has a unified theme.
+					</li>
+				</ul>
+			</div>
+
+			<div class="text-center my-16">
+				<a class="convertkit-button" href="https://bettervetterletter.kit.com/products/membership" data-commerce>Get our best stuff — $5.00 / month</a>
+			</div>
+		</div>
+	</body>
+</html>

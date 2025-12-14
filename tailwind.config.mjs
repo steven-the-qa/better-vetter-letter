@@ -13,6 +13,9 @@ export default {
         "text-light": "#f5f5f5",
         "text-dark": "#1a1a1a",
       },
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],
